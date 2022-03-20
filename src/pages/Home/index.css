@@ -1,0 +1,25 @@
+body{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #c3c2db;
+    color: rgba(255,255,255,0.95);
+    font-size: 15px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    font-family: "微軟正黑體",sans-serif;
+  }
+
+.resume{
+    /* display: flex; */
+    max-width: 950px;
+    border: solid 8px white;
+    padding: 50px;
+    position: relative;
+  }
+
+.myface{
+  position: relative;
+  height: 75%;
+  width: 70%;
+}
