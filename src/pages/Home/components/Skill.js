@@ -8,17 +8,33 @@
  */
 
 
-const Skill =({prop})=>{
-    console.log(skill)
+const Skill =(prop)=>{
+    console.log(prop)
+    const row=[prop.skill.row];
+    console.log(row)
     return (
-        <>
-        {skill.map((skill)=>(
+    
+        /* {skill.map((skill)=>(
             <div>
                 <h2 key={skill.id}>{skill.id}</h2>
             </div>
         ))}
-        
-        </>
+         */
+                <div>
+                {console.log("輸出陣列"+row)}
+                {row.map((row)=>(
+                    <>
+                    <h2>{prop.skill.id}</h2>
+                        {row.map((row)=>(
+                        
+                            <h4 key={prop.skill.id}>    ◆ {row}</h4>
+                            
+                        ))}
+                        <br/>
+                    </>
+                ))}
+                </div>
+
             )
 }
 

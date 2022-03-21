@@ -7,8 +7,8 @@
  * @FilePath: \myresume\src\pages\Home\index.js
  */
 
-import Skills from "./components/Skills"
 import Skill from './components/Skill';
+import License from './components/License';
 import { Row, Col, Divider } from 'antd';
 import './index.css';
 
@@ -53,16 +53,60 @@ const competitions=[
 ];
 const skills=[
     {
-        id:'web',
-        row:[1,2,3],
+        id:'Web',
+        row:["HTML/CSS","Bootstrap","Laravel","PHP","React"],
     },
     {
-        id:'database',
-        row:[4,5,6],
+        id:'DataBase',
+        row:["MySQL","MariaDB","pgsql"],
     },
     {
-        id:'database',
-        row:[7,8,9],
+        id:'Other',
+        row:["Azure","Android","Restful API","vagrant"],
+    },
+    {
+        id:'Office',
+        row:["PowerPoint","Word","Excel"],
+    },
+    {
+        id:'Adobe',
+        row:["Photoshop","Lightroom","Premiere"],
+    },
+    {
+        id:'Language',
+        row:["Chinese","English"],
+    },
+];
+const licenses=[
+    {
+        id:'1',
+        name:"TQC PowerPoint 2016 專業級 Professional",
+        issueDate:"2018/01/06",
+    },
+    {
+        id:'2',
+        name:"TQC Excel 2016 Professional",
+        issueDate:"2018/06/09",
+    },
+    {
+        id:'3',
+        name:"MTA：Introduction to Programming Using HTML and CSS",
+        issueDate:"2019/06/15",
+    },
+    {
+        id:'4',
+        name:"中華民國技術士證電腦軟體設計丙級",
+        issueDate:"107年07年02日",
+    },
+    {
+        id:'5',
+        name:"IPAS行動裝置設計師（Android)-初級能力鑑定",
+        issueDate:"2019/06/15",
+    },
+    {
+        id:'5',
+        name:"新制多益725分",
+        issueDate:"2020/05/24",
     },
 ];
 const Home =()=>{
@@ -95,11 +139,13 @@ const Home =()=>{
         </Row>
         <h2>Skills</h2>
         <Row>
-                <Col span={8}>
+             
                         {skills.map((skill)=>(
-                            <Skill key={skill.id} skill={skill} />
+                               <Col span={8}>
+                                    <Skill key={skill.id} skill={skill} />
+                                </Col>
                         ))}
-                </Col>
+            
         </Row>
         <h2>Competition Results</h2>
         <Row>
@@ -124,6 +170,14 @@ const Home =()=>{
                         </div>
                     ))}
                 </Col>
+        </Row>
+        <h2>License</h2>
+        <Row>
+                        {licenses.map((license)=>(
+                               <Col span={8}>
+                                    <License key={license.id} license={license} />
+                                </Col>
+                        ))}
         </Row>
     </div>)
         }
