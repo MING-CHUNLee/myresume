@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-22 12:01:36
+ * @LastEditTime: 2022-03-22 14:04:46
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -11,7 +11,8 @@ import Skill from './components/Skill';
 import License from './components/License';
 import { Row, Col, Divider } from 'antd';
 import './index.css';
-
+import { Timeline } from 'antd';
+import {SmileTwoTone} from '@ant-design/icons';
 import myface from './image/myface.png';
 import PowerPoint from './image/PowerPoint.jpg';
 import Excel from './image/Excel.jpg';
@@ -156,16 +157,94 @@ const Home =()=>{
                         ))}
             
         </Row>
+        <Row>
+        <ul class="listSkill">
+        <li>
+        <div class="circle">
+            <div class="p90"></div>
+            <div class="p180"></div>
+            <div class="p270"></div>
+            <div class="p360"></div>
+        </div>
+        前端網頁開發(html/css/js)
+        </li>
+        <li>
+        
+        <div class="circle">
+            <div class="p90"></div>
+            <div class="p180"></div>
+            <div class="p270"></div>
+        </div>
+            後端網頁 (laravel)
+        </li>
+        <li>
+          
+          <div class="circle">
+            <div class="p90"></div>
+            <div class="p180"></div>
+            <div class="p270"></div>
+          </div>
+          平面設計<br/>插畫
+        </li>
+        <li>
+          
+          <div class="circle">
+            <div class="p90"></div>
+            <div class="p180"></div>
+            <div class="p270"></div>
+          </div>
+          品牌視覺規劃 (CIS)
+        </li>
+        <li>
+          
+          <div class="circle">
+            <div class="p90"></div>
+            <div class="p180"></div>
+            <div class="p270"></div>
+            <div class="p360"></div>
+          </div>
+          介面/網頁設計 (UI/UX)
+        </li>
+        <li>
+          
+          <div class="circle">
+            <div class="p90"></div>
+            <div class="p180"></div>
+          </div>
+          AutoCAD製圖/程式開發(Lisp)
+        </li>
+        <li>
+          
+          <div class="circle">
+            <div class="p90"></div>
+            <div class="p180"></div>
+            <div class="p270"></div>
+          </div>
+          3D建模彩現
+        </li>
+        <li>
+          
+          <div class="circle">
+            <div class="p90"></div>
+            <div class="p180"></div>
+            <div class="p270"></div>
+          </div>
+          設計企劃/專案管理
+        </li>
+      </ul>
+        </Row>
         <h2>Competition Results</h2>
         <Row>
         <div>
-            <Col span={24}>
-                {competitions.map((competition)=>(
-                    <div>
-                    <h3 key={competition.id}>{competition.title}</h3>
-                    <p key={competition.id}>{competition.describe}</p>
-                    </div>
-                ))}
+            <Col span={24}> 
+                <Timeline>
+                    {competitions.map((competition)=>(
+                        <Timeline.Item dot={ <SmileTwoTone twoToneColor="#eb2f96" />}>
+                        <h3 key={competition.id}>{competition.title}</h3>
+                        <p key={competition.id}>{competition.describe}</p>
+                        </Timeline.Item>
+                    ))}
+                </Timeline>
             </Col>
         </div>
         </Row>
