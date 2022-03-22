@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-21 17:18:06
+ * @LastEditTime: 2022-03-22 12:01:36
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -13,6 +13,11 @@ import { Row, Col, Divider } from 'antd';
 import './index.css';
 
 import myface from './image/myface.png';
+import PowerPoint from './image/PowerPoint.jpg';
+import Excel from './image/Excel.jpg';
+import Mta from './image/MTA.jpg';
+import SoftwareDesignGradeC from './image/SoftwareDesignGradeC.jpg';
+import Toeic from './image/TOEIC.jpg';
 
 const worksexp=[
     {
@@ -82,31 +87,36 @@ const licenses=[
         id:'1',
         name:"TQC PowerPoint 2016 專業級 Professional",
         issueDate:"2018/01/06",
+        url2:"../image/PowerPoint.jpg",
+        url:PowerPoint,
     },
     {
         id:'2',
         name:"TQC Excel 2016 Professional",
         issueDate:"2018/06/09",
+        url2:"../image/Excel.jpg",
+        url:Excel,
     },
     {
         id:'3',
         name:"MTA：Introduction to Programming Using HTML and CSS",
         issueDate:"2019/06/15",
+        url2:"../image/MTA.jpg",
+        url:Mta,
     },
     {
         id:'4',
         name:"中華民國技術士證電腦軟體設計丙級",
         issueDate:"107年07年02日",
-    },
-    {
-        id:'5',
-        name:"IPAS行動裝置設計師（Android)-初級能力鑑定",
-        issueDate:"2019/06/15",
+        url2:"../image/SoftwareDesignGradeC.jpg",
+        url:SoftwareDesignGradeC,
     },
     {
         id:'5',
         name:"新制多益725分",
         issueDate:"2020/05/24",
+        url2:"../image/TOEIC.jpg",
+        url:Toeic,
     },
 ];
 const Home =()=>{
@@ -133,15 +143,14 @@ const Home =()=>{
                 外語能力佳，具備英語溝通能力與優良的理解能力。
                 不怕困難，在新創公司保持主動積極的態度面對新事物。
                 較強的抗壓與時間管理能力，平衡實習、競賽、課業與興趣的時間安排。
-
             </div>
             </Col>
         </Row>
         <h2>Skills</h2>
         <Row>
-             
+
                         {skills.map((skill)=>(
-                               <Col span={8}>
+                                <Col span={8}>
                                     <Skill key={skill.id} skill={skill} />
                                 </Col>
                         ))}
@@ -174,11 +183,12 @@ const Home =()=>{
         <h2>License</h2>
         <Row>
                         {licenses.map((license)=>(
-                               <Col span={8}>
+                            <Col span={12}>
                                     <License key={license.id} license={license} />
                                 </Col>
                         ))}
         </Row>
+
     </div>)
         }
 
