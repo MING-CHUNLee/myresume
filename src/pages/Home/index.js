@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-23 16:24:31
+ * @LastEditTime: 2022-03-23 16:40:18
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -132,9 +132,10 @@ const Home =()=>{
             
         <Row className='basic'>
             <Col span={8}>
-                <div> 
+                <div className='circular--portrait'> 
                     <img src={myface} alt="myface" className="myface" />
                 </div>
+                <h1>李明錞</h1>
             </Col>
             <Col span={16}>
             <div>
@@ -155,10 +156,8 @@ const Home =()=>{
         </Row>
 
         <Row className='h2BG'> 
-                   
-                                <h2>Skills</h2>
-                         
-            </Row>
+                <h2>Skills</h2>
+        </Row>
         <Row className='skill'> 
                                 {skills.map((skill)=>(
                                         <Col span={8}>
@@ -168,12 +167,10 @@ const Home =()=>{
         </Row>
 
         <Row className='h2BG'> 
-                   
-        <h2>Competition Results</h2>
-            
-</Row>
+            <h2>Competition Results</h2>
+        </Row>
        
-       <Row className='skill'> 
+        <Row className='skill'> 
         <div>
             <Col span={24}> 
                 <Timeline>
@@ -188,10 +185,8 @@ const Home =()=>{
         </div>
         </Row>
         <Row className='h2BG'> 
-                   
-        <h2>Work Experience</h2>
-            
-</Row>
+                <h2>Work Experience</h2>
+        </Row>
      
         <Row className='skill'> 
             <Col span={24}>
@@ -204,12 +199,9 @@ const Home =()=>{
                 </Col>
         </Row>
         <Row className='h2BG'> 
-                   
-        <h2>License</h2>
-                       
-           </Row>
+                <h2>License</h2>
+        </Row>
                 
-      
         <Row className='skill'> 
                         {licenses.map((license)=>(
                             <Col span={12}>
