@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-22 14:04:46
+ * @LastEditTime: 2022-03-23 16:24:31
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -9,7 +9,7 @@
 
 import Skill from './components/Skill';
 import License from './components/License';
-import { Row, Col, Divider } from 'antd';
+import { Row, Col} from 'antd';
 import './index.css';
 import { Timeline } from 'antd';
 import {SmileTwoTone} from '@ant-design/icons';
@@ -61,26 +61,32 @@ const skills=[
     {
         id:'Web',
         row:["HTML/CSS","Bootstrap","Laravel","PHP","React"],
+        level:["p90","p180","p270"],
     },
     {
         id:'DataBase',
         row:["MySQL","MariaDB","pgsql"],
+        level:["p90","p180","p270"],
     },
     {
         id:'Other',
         row:["Azure","Android","Restful API","vagrant"],
+        level:["p90","p180"],
     },
     {
         id:'Office',
         row:["PowerPoint","Word","Excel"],
+        level:["p90","p180","p270","p360"],
     },
     {
         id:'Adobe',
         row:["Photoshop","Lightroom","Premiere"],
+        level:["p90","p180","p270","p360"],
     },
     {
         id:'Language',
         row:["Chinese","English"],
+        level:["p90","p180","p270"],
     },
 ];
 const licenses=[
@@ -124,7 +130,7 @@ const Home =()=>{
     return (
     <div className="resume">
             
-        <Row>
+        <Row className='basic'>
             <Col span={8}>
                 <div> 
                     <img src={myface} alt="myface" className="myface" />
@@ -133,108 +139,41 @@ const Home =()=>{
             <Col span={16}>
             <div>
                 
-                就讀臺中科技大學資訊管理系。於專題老師推薦下進入瑪麗安擔任實習生，主要負責行銷文案構想撰寫、合約書撰寫並協助與外籍專員溝通翻譯。
-                樂於學習專業科目與精進外語能力，多次擔任分組組長與簡報人員，擁有良好的時間管理能力與自律能力，至今無未通過的學科並保持於班上前段班，妥善平衡課業與興趣探索。 
-                興趣為閱讀書籍與藝術涵養與培育，至106年入學以來總共借閱 222 本書籍與電影片；業餘互惠攝影，與來自四面八方的夥伴進行創作發想並訓練自身溝通能力及人際關係處理。 
+                        就讀臺中科技大學資訊管理系。於專題老師推薦下進入瑪麗安擔任實習生，主要負責行銷文案構想撰寫、合約書撰寫並協助與外籍專員溝通翻譯。
+                        樂於學習專業科目與精進外語能力，多次擔任分組組長與簡報人員，擁有良好的時間管理能力與自律能力，至今無未通過的學科並保持於班上前段班，妥善平衡課業與興趣探索。 
+                        興趣為閱讀書籍與藝術涵養與培育，至106年入學以來總共借閱 222 本書籍與電影片；業餘互惠攝影，與來自四面八方的夥伴進行創作發想並訓練自身溝通能力及人際關係處理。 
                 <br/>
-                以下為個人優勢：
+                        以下為個人優勢：
                 <br/>
-                善於觀察周遭環境進行創意發想與團隊意見整合。
-                溝通能力強， 善於與不同邏輯思維的合作夥伴溝通與協調。
-                外語能力佳，具備英語溝通能力與優良的理解能力。
-                不怕困難，在新創公司保持主動積極的態度面對新事物。
-                較強的抗壓與時間管理能力，平衡實習、競賽、課業與興趣的時間安排。
+                        善於觀察周遭環境進行創意發想與團隊意見整合。
+                        溝通能力強， 善於與不同邏輯思維的合作夥伴溝通與協調。
+                        外語能力佳，具備英語溝通能力與優良的理解能力。
+                        不怕困難，在新創公司保持主動積極的態度面對新事物。
+                        較強的抗壓與時間管理能力，平衡實習、競賽、課業與興趣的時間安排。
             </div>
             </Col>
         </Row>
-        <h2>Skills</h2>
-        <Row>
 
-                        {skills.map((skill)=>(
-                                <Col span={8}>
-                                    <Skill key={skill.id} skill={skill} />
-                                </Col>
-                        ))}
-            
+        <Row className='h2BG'> 
+                   
+                                <h2>Skills</h2>
+                         
+            </Row>
+        <Row className='skill'> 
+                                {skills.map((skill)=>(
+                                        <Col span={8}>
+                                            <Skill key={skill.id} skill={skill} />
+                                        </Col>
+                                ))}
         </Row>
-        <Row>
-        <ul class="listSkill">
-        <li>
-        <div class="circle">
-            <div class="p90"></div>
-            <div class="p180"></div>
-            <div class="p270"></div>
-            <div class="p360"></div>
-        </div>
-        前端網頁開發(html/css/js)
-        </li>
-        <li>
-        
-        <div class="circle">
-            <div class="p90"></div>
-            <div class="p180"></div>
-            <div class="p270"></div>
-        </div>
-            後端網頁 (laravel)
-        </li>
-        <li>
-          
-          <div class="circle">
-            <div class="p90"></div>
-            <div class="p180"></div>
-            <div class="p270"></div>
-          </div>
-          平面設計<br/>插畫
-        </li>
-        <li>
-          
-          <div class="circle">
-            <div class="p90"></div>
-            <div class="p180"></div>
-            <div class="p270"></div>
-          </div>
-          品牌視覺規劃 (CIS)
-        </li>
-        <li>
-          
-          <div class="circle">
-            <div class="p90"></div>
-            <div class="p180"></div>
-            <div class="p270"></div>
-            <div class="p360"></div>
-          </div>
-          介面/網頁設計 (UI/UX)
-        </li>
-        <li>
-          
-          <div class="circle">
-            <div class="p90"></div>
-            <div class="p180"></div>
-          </div>
-          AutoCAD製圖/程式開發(Lisp)
-        </li>
-        <li>
-          
-          <div class="circle">
-            <div class="p90"></div>
-            <div class="p180"></div>
-            <div class="p270"></div>
-          </div>
-          3D建模彩現
-        </li>
-        <li>
-          
-          <div class="circle">
-            <div class="p90"></div>
-            <div class="p180"></div>
-            <div class="p270"></div>
-          </div>
-          設計企劃/專案管理
-        </li>
-      </ul>
-        </Row>
+
+        <Row className='h2BG'> 
+                   
         <h2>Competition Results</h2>
-        <Row>
+            
+</Row>
+       
+       <Row className='skill'> 
         <div>
             <Col span={24}> 
                 <Timeline>
@@ -248,8 +187,13 @@ const Home =()=>{
             </Col>
         </div>
         </Row>
+        <Row className='h2BG'> 
+                   
         <h2>Work Experience</h2>
-        <Row>
+            
+</Row>
+     
+        <Row className='skill'> 
             <Col span={24}>
                     {worksexp.map((worksexp)=>(
                         <div>
@@ -259,8 +203,14 @@ const Home =()=>{
                     ))}
                 </Col>
         </Row>
+        <Row className='h2BG'> 
+                   
         <h2>License</h2>
-        <Row>
+                       
+           </Row>
+                
+      
+        <Row className='skill'> 
                         {licenses.map((license)=>(
                             <Col span={12}>
                                     <License key={license.id} license={license} />

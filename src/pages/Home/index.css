@@ -1,24 +1,34 @@
 body{
-    padding: 50px;
     display: flex;
     justify-content: center;
-    background-color: #c3c2db;
-    color: rgb(255, 255, 255);
-    /* 疑問2，為什麼component吃步道 */
     font-size: 15px;
     line-height: 28px;
     letter-spacing: 1px;
     font-family: "微軟正黑體",sans-serif;
   }
 
+h2{
+  color: #647b71;
+  margin:0,2vw;
+}
+.h2BG{
+  background-color: #dfe9e4;
+  padding: 5vh;
+}
 .resume{
     /* display: flex; */
     max-width: 80vw;
-    border: solid 8px white;
-    padding: 50px;
+    border: solid 8px rgb(36, 18, 18);
+    /* padding: 50px; */
     position: relative;
+    margin: 2vw;
+   
   }
-
+.basic{
+  background-color: #647b71;
+  color: #fff;
+  padding: 5vw;
+}
 .myface{
   position: relative;
   height: 75%;
@@ -38,7 +48,9 @@ img{
   flex-wrap: wrap;
   
 }
-
+.skill{
+  padding: 5vw;
+}
 .listSkill li{
   width: 25%;
   padding: 5px;
@@ -56,12 +68,12 @@ img{
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  background-color: rgba(255, 113, 104,0.4);
+  background-color: rgba(159, 46, 95,0.4);
 }
 .circle::after{
   content: "";
   display: block;
-  background-color: #02005B;
+  background-color: #532e88;
   width: calc(100% - 20px);
   height: calc(100% - 20px);
   border-radius: 50%;
@@ -76,7 +88,7 @@ img{
   position: absolute;
   left: 50%;
   top: 0;
-  background-color: #FF7168;
+  background-color: #ec458e;
 }
 .p180{
   top: 50%;
