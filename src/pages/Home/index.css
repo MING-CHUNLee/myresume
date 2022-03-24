@@ -31,11 +31,18 @@ h2{
 }
 .myface{
   position: relative;
-  height: 75%;
-  width: 70%;
+  height: 65%;
+  width: 60%;
 }
 
-
+.info{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+h1{
+  color: #fff;
+}
 img{
     position: relative;
     height: 25%;
@@ -44,8 +51,8 @@ img{
 }
 .circular--portrait{
   position:relative;
-  width:200px;
-  height:200px;
+  width:13vw;
+  height:13vw;
   overflow:hidden;
   border-radius:50%;
 }

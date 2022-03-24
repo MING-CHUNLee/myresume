@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-23 16:40:18
+ * @LastEditTime: 2022-03-24 11:44:14
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -9,86 +9,19 @@
 
 import Skill from './components/Skill';
 import License from './components/License';
-import { Row, Col} from 'antd';
+import { Row, Col,Space, List, Avatar,Timeline} from 'antd';
 import './index.css';
-import { Timeline } from 'antd';
-import {SmileTwoTone} from '@ant-design/icons';
+import {SmileTwoTone,MailOutlined,PhoneOutlined} from '@ant-design/icons';
 import myface from './image/myface.png';
 import PowerPoint from './image/PowerPoint.jpg';
 import Excel from './image/Excel.jpg';
 import Mta from './image/MTA.jpg';
 import SoftwareDesignGradeC from './image/SoftwareDesignGradeC.jpg';
 import Toeic from './image/TOEIC.jpg';
+import workexps from './json/worksexps.json';
+import competitions from './json/competitions.json';
+import skills from './json/skills.json';
 
-const worksexp=[
-    {
-        id:'1',
-        title:"瑪麗安生技有限公司實習生",
-        period:"2021年9月 - 2022年1月",
-        describe:"於新創公司實習，負責撰寫產品文案與行銷策略發想、擬定合約書草案與協助與外籍專員翻譯溝通。",
-    },
-    {
-        id:'2',
-        title:"教育部補捐助計畫TDOC兼任助理工讀",
-        period:"2021年7月 - 2021年9月",
-        describe:"暑假短期協助教授專案影片英聽打字翻譯人員與拍攝現場協助。",
-    },
-];
-
-const competitions=[
-    {
-        id:'1',
-        title:"【2021年資訊與流通學院專題成果展­】",
-        describe:"開發團隊共四人，主要負責主題企劃發想與文書撰寫與系統平台前端開發人員與資料庫設計規劃。",
-    },
-    {
-        id:'2',
-        title:"【2021年第26屆大專院校資訊應用服務創新競賽­-Azure雲端創新產業應用組】",
-        describe:"開發團隊共四人，主要負責主題企劃發想與文書撰寫與系統平台前端開發人員與資料庫設計規劃。",
-    },
-    {
-        id:'3',
-        title:"【2019 Linker無限可能-全國大專院校創意行銷與創業競賽】",
-        describe:"開發團隊共二人，主要負責企劃書撰寫、資料庫規劃、後端開發人員與成果報告人員，也協助前端人員資料串接困難協助。",
-    },
-    {
-        id:'4',
-        title:"【2019 Linker無限可能-全國大專院校創意行銷與創業競賽】",
-        describe:"參賽團隊共三人，主要負責企劃書撰寫、行銷策略發想與成果報告人員。",
-    },
-];
-const skills=[
-    {
-        id:'Web',
-        row:["HTML/CSS","Bootstrap","Laravel","PHP","React"],
-        level:["p90","p180","p270"],
-    },
-    {
-        id:'DataBase',
-        row:["MySQL","MariaDB","pgsql"],
-        level:["p90","p180","p270"],
-    },
-    {
-        id:'Other',
-        row:["Azure","Android","Restful API","vagrant"],
-        level:["p90","p180"],
-    },
-    {
-        id:'Office',
-        row:["PowerPoint","Word","Excel"],
-        level:["p90","p180","p270","p360"],
-    },
-    {
-        id:'Adobe',
-        row:["Photoshop","Lightroom","Premiere"],
-        level:["p90","p180","p270","p360"],
-    },
-    {
-        id:'Language',
-        row:["Chinese","English"],
-        level:["p90","p180","p270"],
-    },
-];
 const licenses=[
     {
         id:'1',
@@ -126,18 +59,42 @@ const licenses=[
         url:Toeic,
     },
 ];
+
+
 const Home =()=>{
     return (
     <div className="resume">
             
         <Row className='basic'>
-            <Col span={8}>
+            <Col span={7}>
+            <Space direction="vertical">
+            
                 <div className='circular--portrait'> 
                     <img src={myface} alt="myface" className="myface" />
                 </div>
-                <h1>李明錞</h1>
+            <br/>
+            
+                <Row>
+                    <Col span={24}>
+                
+                        <h1>李明錞</h1>
+                
+                    </Col>
+                    <Col>
+                    
+                    <MailOutlined /> mindy80230@gmail.com
+                    <br/>
+                    <PhoneOutlined /> 0934-253-468
+                    </Col>
+                </Row>
+            
+
+                </Space>
+                <Space direction="vertical">
+
+                </Space>
             </Col>
-            <Col span={16}>
+            <Col span={17}>
             <div>
                 
                         就讀臺中科技大學資訊管理系。於專題老師推薦下進入瑪麗安擔任實習生，主要負責行銷文案構想撰寫、合約書撰寫並協助與外籍專員溝通翻譯。
@@ -190,7 +147,7 @@ const Home =()=>{
      
         <Row className='skill'> 
             <Col span={24}>
-                    {worksexp.map((worksexp)=>(
+                    {workexps.map((worksexp)=>(
                         <div>
                         <h3 key={worksexp.id}>{worksexp.title}</h3><span key={worksexp.id}>{worksexp.period}</span>
                         <p key={worksexp.id}>{worksexp.describe}</p>
