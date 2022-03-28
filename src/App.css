@@ -1,4 +1,6 @@
 @import '~antd/dist/antd.css';
+
+@dark-color: #343a40;
 .App {
   text-align: center;
 }
