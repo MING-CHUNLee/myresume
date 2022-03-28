@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-28 14:40:45
+ * @LastEditTime: 2022-03-28 15:43:31
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -89,32 +89,35 @@ const Home =()=>{
             
                 <Row>
                     <Col xs={{span: 24}} md={{span: 24}}>
-                
                         <h1>李明錞</h1>
-                
                     </Col>
-                    <Col>
                     <Space direction="vertical">
-
-                    </Space>
-                    <Button type="primary" onClick={showDrawer}>
-                        Open
+                    <Button  type="dark"   icon={<MailOutlined />} onClick={showDrawer}>
+                        Send mail to mindy80230
                     </Button>
                     <Drawer title="與李明錞聯繫" placement="right" onClose={onClose} visible={visible}>
                         <ContactUs/>
                     </Drawer>
-
-                    <br/>
-                    <PhoneOutlined /> 0934-253-468
-                    </Col>
+                    <Button
+                    type="dark"
+                    href={"tel:+900300400"}
+                    icon={<PhoneOutlined />}
+                    onClick={() => this.enterLoading(1)}
+                    >
+                    Call to 0934-253-468
+                    </Button>
                     <Button
                     type="dark"
                     href={"https://github.com/MING-CHUNLee"}
                     icon={<GithubOutlined />}
                     onClick={() => this.enterLoading(1)}
                     >
-                    Click me!
+                    Check MING github!
                     </Button>
+                    </Space>
+                  
+                   
+          
                 </Row>
                 </Space>
             </Col>
