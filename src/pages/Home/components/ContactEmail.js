@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-28 11:45:37
- * @LastEditTime: 2022-03-28 15:15:39
+ * @LastEditTime: 2022-03-28 16:02:14
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\components\ContactEmail.js
@@ -40,7 +40,7 @@ return (
         </Row>
         <Row>
             <Col span={10}><label>Email</label></Col>
-            <Col span={14}> <Input type="email" name="user_email" /></Col>
+            <Col span={14}> <Input type="email" name="user_email" placeholder="Your Email"/></Col>
         </Row>
         <Row>
             <Col span={10}>  <label>Message</label></Col>

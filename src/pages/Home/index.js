@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-28 15:43:31
+ * @LastEditTime: 2022-03-28 17:29:04
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -80,48 +80,66 @@ const Home =()=>{
             
         <Row className='basic'>
             <Col xs={{span: 24}} md={{span:7}}>
+
+
             <Space direction="vertical">
-            
-                <div className='circular--portrait'> 
+            <Row>
+            <Col  xs={{span: 24 , offset:6}} sm={{span: 24 , offset:6}} md={{span:24,offset:3}}>
+                <div className='circular--portrait'  > 
                     <img src={myface} alt="myface" className="myface" />
                 </div>
             <br/>
-            
+            </Col>
+            </Row>
                 <Row>
-                    <Col xs={{span: 24}} md={{span: 24}}>
+                    <Col xs={{span: 24 , offset:10}} sm={{span: 24 , offset:10}} md={{span: 24, offset:6}}>
                         <h1>李明錞</h1>
                     </Col>
+                  
                     <Space direction="vertical">
-                    <Button  type="dark"   icon={<MailOutlined />} onClick={showDrawer}>
-                        Send mail to mindy80230
-                    </Button>
-                    <Drawer title="與李明錞聯繫" placement="right" onClose={onClose} visible={visible}>
-                        <ContactUs/>
-                    </Drawer>
+                    <Col xs={{span: 24}} md={{span: 24}}>
+                        <Button  
+                            type="dark"  
+                            icon={<MailOutlined />} 
+                            onClick={showDrawer}
+                            block
+                        >
+                            Send mail to mindy80230
+                        </Button>
+                        <Drawer title="與李明錞聯繫" placement="right" onClose={onClose} visible={visible}>
+                            <ContactUs/>
+                        </Drawer>
+                  
+                    
                     <Button
-                    type="dark"
-                    href={"tel:+900300400"}
-                    icon={<PhoneOutlined />}
-                    onClick={() => this.enterLoading(1)}
+                        type="dark"
+                        href={"tel:+900300400"}
+                        icon={<PhoneOutlined />}
+                        onClick={() => this.enterLoading(1)}
+                        block
                     >
                     Call to 0934-253-468
                     </Button>
+            
                     <Button
                     type="dark"
                     href={"https://github.com/MING-CHUNLee"}
                     icon={<GithubOutlined />}
                     onClick={() => this.enterLoading(1)}
+                    block
                     >
                     Check MING github!
                     </Button>
+                    </Col>
                     </Space>
-                  
-                   
-          
+
                 </Row>
                 </Space>
             </Col>
-            <Col xs={{span: 24}} md={{span:17}}>
+
+
+            
+            <Col xs={{span: 24}} sm={{span:24}} md={{span:17}}>
             <div>
                 
                         就讀臺中科技大學資訊管理系。

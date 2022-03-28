@@ -22,7 +22,6 @@ h2{
     /* padding: 50px; */
     position: relative;
     margin: 3vw;
-   
   }
 .basic{
   background-color: #647b71;
@@ -121,3 +120,56 @@ img{
   top: 0;
 }
 
+@media (min-width: 800px)  and (max-width: 1000px){
+  .circular--portrait{
+    position:relative;
+    width:20vw;
+    height:20vw;
+    overflow:hidden;
+    border-radius:50%;
+  }
+  .img{
+    position: relative;
+    height: 35%;
+    width: 40%;
+  
+}
+}
+
+
+@media screen and (max-width: 600px){
+
+
+  .circular--portrait{
+    position:relative;
+    width:40vw;
+    height:40vw;
+    overflow:hidden;
+    border-radius:50%;
+  }
+  .img{
+    position: relative;
+    height: 35%;
+    width: 40%;
+  
+}
+}
+
+
+@media (min-width: 600px) and (max-width: 800px){
+
+
+  .circular--portrait{
+    position:relative;
+    width:35vw;
+    height:35vw;
+    overflow:hidden;
+    border-radius:50%;
+  }
+  .img{
+    position: relative;
+    height: 35%;
+    width: 40%;
+  
+}
+}
