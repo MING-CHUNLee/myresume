@@ -26,45 +26,30 @@ import licenses from './json/licenses.json';
 const Home =()=>{
     
     const [visible, setVisible] = useState(false);
-    const [isModal1, setIsModal1] = useState(false);
-    const [isModal2, setIsModal2] = useState(false);
-
-    // function showModal(prop){
-
-         
-    //     console.log('=== show modal ===',prop);
-
-    //    if(prop===1){
-    //        setIsModal1(true);
-    //        console.log('=== show modal 1===',prop);
-    //    }else{
-    //        setIsModal2(true)
-    //        console.log('=== show modal 2===',prop);
-
-    //    }
-    // }
-    const showDrawer = () => {
+       // 抽屜的
+       const showDrawer = () => {
         setVisible(true);
     };
 
     const onClose = () => {
         setVisible(false);
     };
-    // const showModal = () => {
-    //     setIsModalVisible(true);
-    // };
+
+    // 對話框的
+    const [isModal1, setIsModal1] = useState(false);
+    const [isModal2, setIsModal2] = useState(false);
+
     const showModal = (prop) => {
-        
-        console.log('=== show modal ===');
 
-       if(prop===1){
-           setIsModal1(true);
-           console.log('=== show modal 1===',prop);
-       }else{
-           setIsModal2(true)
-           console.log('=== show modal 2===',prop);
 
-       }
+        if(prop===0){
+            setIsModal1(true);
+            console.log('=== show modal 1===',prop);
+        }else{
+            setIsModal2(true)
+            console.log('=== show modal 2===',prop);
+
+        }
     };
     // const ModalVisible1 = (prop) => {
     //     setIsModalVisible(true);
@@ -75,12 +60,28 @@ const Home =()=>{
     // const destroyOnClose=()=>{
     //     setVisible(false);
     // }
-    const handleOk = () => {
-        // setIsModalVisible(true);
+    const handleOk1 = () => {
+ 
+          setIsModal1(false);
+        //   setIsModal2(false);
     };
+    const handleOk2 = () => {
+ 
+        setIsModal2(false);
+      //   setIsModal2(false);
+  };
     
-    const handleCancel = () => {
+    const handleCancel1 = () => {
         // setIsModalVisible(false);
+  
+          setIsModal1(false);
+        //   setIsModal2(false);
+    };
+    const handleCancel2 = () => {
+        // setIsModalVisible(false);
+  
+          setIsModal2(false);
+        //   setIsModal2(false);
     };
 
 
@@ -223,11 +224,11 @@ const Home =()=>{
                                 </Col>
                         ))}
         </Row>
-        <Modal title="Basic Modal" visible={isModal1} onOk={handleOk} onCancel={handleCancel}>
+        <Modal title="Basic Modal" visible={isModal1} onOk={handleOk1} onCancel={handleCancel1}>
                 <p>1Some contents...</p>
                 {/* <img src={worksExp.url} alt="myface" className="myface" /> */}
         </Modal>
-        <Modal title="Basic Modal" visible={isModal2} onOk={handleOk} onCancel={handleCancel}>
+        <Modal title="Basic Modal" visible={isModal2} onOk={handleOk2} onCancel={handleCancel2}>
                 <p>2Some contents...</p>
                 {/* <img src={worksExp.url} alt="myface" className="myface" /> */}
         </Modal>
