@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-29 16:28:01
+ * @LastEditTime: 2022-03-29 18:26:53
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -20,9 +20,29 @@ import competitions from './json/competitions.json';
 import skills from './json/skills.json';
 import licenses from './json/licenses.json';
 
+
+
+
 const Home =()=>{
+    
     const [visible, setVisible] = useState(false);
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isModal1, setIsModal1] = useState(false);
+    const [isModal2, setIsModal2] = useState(false);
+
+    // function showModal(prop){
+
+         
+    //     console.log('=== show modal ===',prop);
+
+    //    if(prop===1){
+    //        setIsModal1(true);
+    //        console.log('=== show modal 1===',prop);
+    //    }else{
+    //        setIsModal2(true)
+    //        console.log('=== show modal 2===',prop);
+
+    //    }
+    // }
     const showDrawer = () => {
         setVisible(true);
     };
@@ -30,15 +50,37 @@ const Home =()=>{
     const onClose = () => {
         setVisible(false);
     };
-    const showModal = () => {
-        setIsModalVisible(true);
+    // const showModal = () => {
+    //     setIsModalVisible(true);
+    // };
+    const showModal = (prop) => {
+        
+        console.log('=== show modal ===');
+
+       if(prop===1){
+           setIsModal1(true);
+           console.log('=== show modal 1===',prop);
+       }else{
+           setIsModal2(true)
+           console.log('=== show modal 2===',prop);
+
+       }
     };
+    // const ModalVisible1 = (prop) => {
+    //     setIsModalVisible(true);
+    // }
+    // const ModalVisible2 = () => {
+    //     setIsModalVisible(true);
+    // }
+    // const destroyOnClose=()=>{
+    //     setVisible(false);
+    // }
     const handleOk = () => {
-        setIsModalVisible(true);
+        // setIsModalVisible(true);
     };
     
     const handleCancel = () => {
-        setIsModalVisible(false);
+        // setIsModalVisible(false);
     };
 
 
@@ -157,17 +199,14 @@ const Home =()=>{
         <Row className='skill'> 
             <Col span={24}>
                 <Timeline>
-                    {workexps.map((worksexp)=>(
+                    {workexps.map((worksExp,index)=>(
+                        
                         <Timeline.Item dot={ <SmileTwoTone twoToneColor="#eb2f96" />}>
-                        <Card title={worksexp.title} extra={ <Button type="primary" onClick={ showModal}>Detail</Button>}>
-                            <span key={worksexp.id}>{worksexp.period}</span>
-                            <p key={worksexp.id}>{worksexp.describe}</p>
+                        <Card title={worksExp.title} extra={ <Button type="primary" onClick={() => showModal(index)}>Detail</Button>}>
+                            <span key={worksExp.id}>{worksExp.period}</span>
+                            <p key={worksExp.id}>{worksExp.describe}</p>
+                            <span>{index}</span>
                         </Card>
-                        <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                                <p>Some contents...</p>
-                                <img src={worksexp.url} alt="myface" className="myface" />
-                        </Modal>
-                        modal.destroy();
                         </Timeline.Item>
                         
                     ))}
@@ -184,6 +223,14 @@ const Home =()=>{
                                 </Col>
                         ))}
         </Row>
+        <Modal title="Basic Modal" visible={isModal1} onOk={handleOk} onCancel={handleCancel}>
+                <p>1Some contents...</p>
+                {/* <img src={worksExp.url} alt="myface" className="myface" /> */}
+        </Modal>
+        <Modal title="Basic Modal" visible={isModal2} onOk={handleOk} onCancel={handleCancel}>
+                <p>2Some contents...</p>
+                {/* <img src={worksExp.url} alt="myface" className="myface" /> */}
+        </Modal>
 
     </div>)
         }
