@@ -174,4 +174,24 @@ img{
   .resume{
     max-width: 100vw;
   }
+
+  @media (min-width: 1000px) {
+
+
+    .circular--portrait{
+      position:relative;
+      width:30vw;
+      height:30vw;
+      overflow:hidden;
+      border-radius:50%;
+    }
+    .img{
+      position: relative;
+      height: 35%;
+      width: 40%;
+    }
+    .resume{
+      max-width: 100vw;
+    }
+}
 }

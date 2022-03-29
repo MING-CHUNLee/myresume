@@ -9,8 +9,9 @@
 
 import Skill from './components/Skill';
 import License from './components/License';
+import Model from './components/Model';
 import { ContactUs } from './components/ContactEmail';
-import { Row, Col,Space,Timeline,Button,Drawer, Modal,Card, Form} from 'antd';
+import { Row, Col,Space,Timeline,Button,Drawer, Modal,Card, Form,Divider} from 'antd';
 import React, { useEffect, useState } from "react";
 import './index.css';
 import {SmileTwoTone,MailOutlined,PhoneOutlined,GithubOutlined} from '@ant-design/icons';
@@ -19,8 +20,8 @@ import workexps from './json/worksexps.json';
 import competitions from './json/competitions.json';
 import skills from './json/skills.json';
 import licenses from './json/licenses.json';
-
-
+import Marian from './image/Marian.jpg'
+import Tdoc from './image/TDOC.jpg'
 
 
 const Home =()=>{
@@ -51,45 +52,38 @@ const Home =()=>{
 
         }
     };
-    // const ModalVisible1 = (prop) => {
-    //     setIsModalVisible(true);
-    // }
-    // const ModalVisible2 = () => {
-    //     setIsModalVisible(true);
-    // }
-    // const destroyOnClose=()=>{
-    //     setVisible(false);
-    // }
-    const handleOk1 = () => {
- 
-          setIsModal1(false);
-        //   setIsModal2(false);
-    };
-    const handleOk2 = () => {
- 
-        setIsModal2(false);
+
+    const handleOk = (prop) => {
+        if(prop===0){
+            setIsModal1(false);
+            console.log('=== show modal 1===',prop);
+        }else{
+            setIsModal2(false)
+            console.log('=== show modal 2===',prop);
+
+        }
+       
       //   setIsModal2(false);
   };
+   
+  const handleCancel = (prop) => {
+    if(prop===0){
+        setIsModal1(false);
+        console.log('=== show modal 1===',prop);
+    }else{
+        setIsModal2(false)
+        console.log('=== show modal 2===',prop);
+
+    }
+};
     
-    const handleCancel1 = () => {
-        // setIsModalVisible(false);
-  
-          setIsModal1(false);
-        //   setIsModal2(false);
-    };
-    const handleCancel2 = () => {
-        // setIsModalVisible(false);
-  
-          setIsModal2(false);
-        //   setIsModal2(false);
-    };
 
 
     return (
     <div className="resume">
             
         <Row className='basic'>
-            <Col xs={{span: 24}} md={{span:8}}>
+            <Col xs={{span: 24}} md={{span:8}} lg={{span:9}}>
 
 
             <Space direction="vertical">
@@ -102,10 +96,10 @@ const Home =()=>{
             </Col>
             </Row>
                 <Row>
-                    <Col xs={{span: 24 , offset:9}} sm={{span: 24 , offset:10}} md={{span: 24, offset:7}}>
+                    <Col xs={{span: 24 , offset:9}} sm={{span: 24 , offset:10}} md={{span: 24, offset:7}} lg={{span:24,offset:9}}>
                         <h1>李明錞</h1>
                     </Col>
-                    <Col xs={{span: 24, offset:2}} sm={{span: 24}} md={{span: 20}}>
+                    <Col xs={{span: 24, offset:2}} sm={{span: 24}} md={{span: 20}} lg={{span:24}}>
                     <Space direction="vertical" size="small">
                         <Button  
                             type="dark"  
@@ -146,7 +140,7 @@ const Home =()=>{
                 </Space>
             </Col>
             
-            <Col xs={{span: 24}} sm={{span:24}} md={{span:16}}>
+            <Col xs={{span: 24}} sm={{span:24}} md={{span:16}} lg={{span:15}}>
             <div>
                 
                         就讀臺中科技大學資訊管理系。
@@ -206,14 +200,34 @@ const Home =()=>{
                         <Card title={worksExp.title} extra={ <Button type="primary" onClick={() => showModal(index)}>Detail</Button>}>
                             <span key={worksExp.id}>{worksExp.period}</span>
                             <p key={worksExp.id}>{worksExp.describe}</p>
-                            <span>{index}</span>
                         </Card>
+                
                         </Timeline.Item>
                         
                     ))}
                 </Timeline>
                 </Col>
         </Row>
+        {/* 測試版
+        <Row className='skill'> 
+            <Col span={24}>
+                <Timeline>
+                    {workexps.map((worksExp,index)=>(
+                        
+                        <Timeline.Item dot={ <SmileTwoTone twoToneColor="#eb2f96" />}>
+                        <Card title={worksExp.title} extra={ <Button type="primary" onClick={() => showModal(index)}>Detail</Button>}>
+                            <span key={worksExp.id}>{worksExp.period}</span>
+                            <p key={worksExp.id}>{worksExp.describe}</p>
+                            <span key={index}>{index}</span>
+                        </Card>
+                        
+                        <Model key={worksExp.id} worksExp={worksExp.url}></Model>
+                        </Timeline.Item>
+                        
+                    ))}
+                </Timeline>
+                </Col>
+        </Row> */}
         <Row className='h2BG'> 
                 <h2>License</h2>
         </Row>
@@ -224,13 +238,29 @@ const Home =()=>{
                                 </Col>
                         ))}
         </Row>
-        <Modal title="Basic Modal" visible={isModal1} onOk={handleOk1} onCancel={handleCancel1}>
-                <p>1Some contents...</p>
-                {/* <img src={worksExp.url} alt="myface" className="myface" /> */}
+        <Modal title="瑪麗安生技有限公司" visible={isModal1} onOk={() => handleOk(0)} onCancel={()=>handleCancel(0)}>
+                <Divider><h2>紀錄照片</h2></Divider> 
+                <img src={Marian} alt="myface"/>
+                <Divider><h2>重要事件與紀錄</h2></Divider> 
+                <ol>
+                        <li>撰寫產品行銷文案</li>
+                        <li>制定退換貨與網站隱私條款政策</li>
+                        <li>網站SEO優化</li>
+                        <li>協助外語翻譯</li>
+                        <li>經營社群小編</li>
+                </ol>
+
         </Modal>
-        <Modal title="Basic Modal" visible={isModal2} onOk={handleOk2} onCancel={handleCancel2}>
-                <p>2Some contents...</p>
-                {/* <img src={worksExp.url} alt="myface" className="myface" /> */}
+        <Modal title="TDOC兼任工讀生" visible={isModal2} onOk={() => handleOk(1)} onCancel={()=>handleCancel(1)}>
+                <Divider><h2>紀錄照片</h2></Divider> 
+                <img src={Tdoc} alt="myface"/>
+                <Divider><h2>重要事件與紀錄</h2></Divider> 
+                <ol>
+                        <li>影片雙語翻譯</li>
+                        <li>定地群發信件</li>
+                        <li>協助拍攝現場</li>
+                </ol>
+
         </Modal>
 
     </div>)
