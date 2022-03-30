@@ -1,17 +1,17 @@
 [
     {
         "id":"Web",
-        "row":["HTML/CSS","Bootstrap","Laravel","PHP","React"],
+        "row":["Html/Css","Bootstrap","Laravel","Php","React"],
         "level":["p90","p180","p270"]
     },
     {
         "id":"DataBase",
-        "row":["MySQL","MariaDB","pgsql"],
+        "row":["MySQL","MariaDB","Pgsql"],
         "level":["p90","p180","p270"]
     },
     {
         "id":"Other",
-        "row":["Azure","Android","Restful API","vagrant"],
+        "row":["Azure","Android","Restful API","Vagrant"],
         "level":["p90","p180"]
     },
     {

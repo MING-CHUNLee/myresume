@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-29 18:26:53
+ * @LastEditTime: 2022-03-30 17:04:42
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -11,7 +11,7 @@ import Skill from './components/Skill';
 import License from './components/License';
 import Model from './components/Model';
 import { ContactUs } from './components/ContactEmail';
-import { Row, Col,Space,Timeline,Button,Drawer, Modal,Card, Form,Divider} from 'antd';
+import { message,Row, Col,Space,Timeline,Button,Drawer, Modal,Card, Form,Divider} from 'antd';
 import React, { useEffect, useState } from "react";
 import './index.css';
 import {SmileTwoTone,MailOutlined,PhoneOutlined,GithubOutlined} from '@ant-design/icons';
@@ -28,7 +28,7 @@ const Home =()=>{
     
     const [visible, setVisible] = useState(false);
        // 抽屜的
-       const showDrawer = () => {
+    const showDrawer = () => {
         setVisible(true);
     };
 
@@ -39,42 +39,39 @@ const Home =()=>{
     // 對話框的
     const [isModal1, setIsModal1] = useState(false);
     const [isModal2, setIsModal2] = useState(false);
-
+    
     const showModal = (prop) => {
-
-
+        
+      
         if(prop===0){
+            message.error('尚未結束',5);
+        }else if(prop===1){
             setIsModal1(true);
-            console.log('=== show modal 1===',prop);
-        }else{
+        }else if(prop===2){
             setIsModal2(true)
-            console.log('=== show modal 2===',prop);
-
         }
     };
 
     const handleOk = (prop) => {
-        if(prop===0){
+        if(prop===1){
             setIsModal1(false);
             console.log('=== show modal 1===',prop);
-        }else{
+        }else if(prop===2){
             setIsModal2(false)
             console.log('=== show modal 2===',prop);
 
         }
-       
-      //   setIsModal2(false);
-  };
-   
-  const handleCancel = (prop) => {
-    if(prop===0){
-        setIsModal1(false);
-        console.log('=== show modal 1===',prop);
-    }else{
-        setIsModal2(false)
-        console.log('=== show modal 2===',prop);
+};
 
-    }
+    const handleCancel = (prop) => {
+        if(prop===1){
+            setIsModal1(false);
+            console.log('=== show modal 1===',prop);
+        }else if(prop===2){
+            setIsModal2(false)
+            console.log('=== show modal 2===',prop);
+
+        }
 };
     
 
@@ -96,7 +93,7 @@ const Home =()=>{
             </Col>
             </Row>
                 <Row>
-                    <Col xs={{span: 24 , offset:9}} sm={{span: 24 , offset:10}} md={{span: 24, offset:7}} lg={{span:24,offset:9}}>
+                    <Col xs={{span: 24 , offset:9}} sm={{span: 24 , offset:7}} md={{span: 24, offset:6}} lg={{span:24,offset:7}} >
                         <h1>李明錞</h1>
                     </Col>
                     <Col xs={{span: 24, offset:2}} sm={{span: 24}} md={{span: 20}} lg={{span:24}}>
@@ -124,13 +121,13 @@ const Home =()=>{
                     </Button>
                 
                     <Button
-                    type="dark"
-                    href={"https://github.com/MING-CHUNLee"}
-                    icon={<GithubOutlined />}
-                    onClick={() => this.enterLoading(1)}
-                    block
-                    >
-                    Check MING github!
+                        type="dark"
+                        href={"https://github.com/MING-CHUNLee"}
+                        icon={<GithubOutlined />}
+                        onClick={() => this.enterLoading(1)}
+                        block
+                        >
+                        Check MING github!
                     </Button>
                     </Space>
                     </Col>
@@ -233,32 +230,32 @@ const Home =()=>{
         </Row>
         <Row className='skill'> 
                         {licenses.map((license)=>(
-                            <Col span={12}>
+                            <Col xs={{span: 24}} sm={{span: 24}}md={{span:12}}>
                                     <License key={license.id} license={license} />
                                 </Col>
                         ))}
         </Row>
-        <Modal title="瑪麗安生技有限公司" visible={isModal1} onOk={() => handleOk(0)} onCancel={()=>handleCancel(0)}>
+        <Modal title="瑪麗安生技有限公司實習生" visible={isModal1} onOk={() => handleOk(1)} onCancel={()=>handleCancel(1)}>
                 <Divider><h2>紀錄照片</h2></Divider> 
                 <img src={Marian} alt="myface"/>
                 <Divider><h2>重要事件與紀錄</h2></Divider> 
                 <ol>
-                        <li>撰寫產品行銷文案</li>
-                        <li>制定退換貨與網站隱私條款政策</li>
-                        <li>網站SEO優化</li>
-                        <li>協助外語翻譯</li>
-                        <li>經營社群小編</li>
+                        <li>分析產品成分與目標客群後撰寫生技產品行銷文案</li>
+                        <li>分析同行制定電商網站退換貨與網站隱私條款政策</li>
+                        <li>Wordpress網站SEO優化</li>
+                        <li>協助外語舞蹈教師與上層的溝通翻譯</li>
+                        <li>經營Facebook與Instagram社群小編</li>
                 </ol>
 
         </Modal>
-        <Modal title="TDOC兼任工讀生" visible={isModal2} onOk={() => handleOk(1)} onCancel={()=>handleCancel(1)}>
+        <Modal title="教育部補捐助計畫TDOC兼任助理工讀" visible={isModal2} onOk={() => handleOk(2)} onCancel={()=>handleCancel(2)}>
                 <Divider><h2>紀錄照片</h2></Divider> 
-                <img src={Tdoc} alt="myface"/>
+                <img src={Tdoc} alt="myface"/>  
                 <Divider><h2>重要事件與紀錄</h2></Divider> 
                 <ol>
-                        <li>影片雙語翻譯</li>
-                        <li>定地群發信件</li>
-                        <li>協助拍攝現場</li>
+                        <li>iphone手機修復影片系列英文撰寫字幕與校搞</li>
+                        <li>使用Word搭配Eexcel製作Outllook群發信件</li>
+                        <li>協助電腦拆卸組裝教學直播拍攝現場</li>
                 </ol>
 
         </Modal>
