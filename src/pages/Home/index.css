@@ -100,7 +100,13 @@ img{
   top: 50%;
   transform: translate(-50%,-50%)
 }
-.p90,.p180,.p270,.p360{
+
+.imgc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .p90,.p180,.p270,.p360{
   width: 50%;
   height: 50%;
   position: absolute;
@@ -118,7 +124,7 @@ img{
 .p360{
   left: 0;
   top: 0;
-}
+} */
 
 @media (min-width: 800px)  and (max-width: 1000px){
   .circular--portrait{

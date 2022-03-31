@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-30 17:04:42
+ * @LastEditTime: 2022-03-31 10:43:13
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -22,6 +22,7 @@ import skills from './json/skills.json';
 import licenses from './json/licenses.json';
 import Marian from './image/Marian.jpg'
 import Tdoc from './image/TDOC.jpg'
+import styled from 'styled-components';
 
 
 const Home =()=>{
@@ -205,26 +206,6 @@ const Home =()=>{
                 </Timeline>
                 </Col>
         </Row>
-        {/* 測試版
-        <Row className='skill'> 
-            <Col span={24}>
-                <Timeline>
-                    {workexps.map((worksExp,index)=>(
-                        
-                        <Timeline.Item dot={ <SmileTwoTone twoToneColor="#eb2f96" />}>
-                        <Card title={worksExp.title} extra={ <Button type="primary" onClick={() => showModal(index)}>Detail</Button>}>
-                            <span key={worksExp.id}>{worksExp.period}</span>
-                            <p key={worksExp.id}>{worksExp.describe}</p>
-                            <span key={index}>{index}</span>
-                        </Card>
-                        
-                        <Model key={worksExp.id} worksExp={worksExp.url}></Model>
-                        </Timeline.Item>
-                        
-                    ))}
-                </Timeline>
-                </Col>
-        </Row> */}
         <Row className='h2BG'> 
                 <h2>License</h2>
         </Row>
@@ -237,7 +218,10 @@ const Home =()=>{
         </Row>
         <Modal title="瑪麗安生技有限公司實習生" visible={isModal1} onOk={() => handleOk(1)} onCancel={()=>handleCancel(1)}>
                 <Divider><h2>紀錄照片</h2></Divider> 
-                <img src={Marian} alt="myface"/>
+                <div className='imgc'>
+                    <img src={Marian} alt="Marian"/>
+                </div>
+                
                 <Divider><h2>重要事件與紀錄</h2></Divider> 
                 <ol>
                         <li>分析產品成分與目標客群後撰寫生技產品行銷文案</li>
@@ -250,7 +234,9 @@ const Home =()=>{
         </Modal>
         <Modal title="教育部補捐助計畫TDOC兼任助理工讀" visible={isModal2} onOk={() => handleOk(2)} onCancel={()=>handleCancel(2)}>
                 <Divider><h2>紀錄照片</h2></Divider> 
-                <img src={Tdoc} alt="myface"/>  
+                <div className='imgc'>
+                    <img src={Tdoc} alt="myface"/> 
+                </div> 
                 <Divider><h2>重要事件與紀錄</h2></Divider> 
                 <ol>
                         <li>iphone手機修復影片系列英文撰寫字幕與校搞</li>
