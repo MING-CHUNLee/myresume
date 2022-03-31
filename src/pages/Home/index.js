@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-21 11:55:18
- * @LastEditTime: 2022-03-31 14:47:27
+ * @LastEditTime: 2022-03-31 16:58:41
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \myresume\src\pages\Home\index.js
@@ -167,7 +167,7 @@ const showModalCOM = (prop) => {
                     
                     <Button
                         type="dark"
-                        href={"tel:+900300400"}
+                        href={"tel:+886-34253468"}
                         icon={<PhoneOutlined />}
                         onClick={() => this.enterLoading(1)}
                         block
@@ -228,7 +228,7 @@ const showModalCOM = (prop) => {
         </Row>
         <Row className='skill'> 
         <div>
-            <Col span={24}> 
+            <Col  xs={{span: 24}} sm={{span: 24}} md={{span:12}}> 
                 <Timeline>
                     {competitions.map((competition,index)=>(
                         <Timeline.Item dot={ <SmileTwoTone twoToneColor="#eb2f96" />}>
@@ -268,7 +268,7 @@ const showModalCOM = (prop) => {
         </Row>
         <Row className='skill'> 
                         {licenses.map((license)=>(
-                            <Col xs={{span: 24}} sm={{span: 24}}md={{span:12}}>
+                            <Col xs={{span: 24}} sm={{span: 24}} md={{span:12}}>
                                     <License key={license.id} license={license} />
                                 </Col>
                         ))}
@@ -337,7 +337,6 @@ const showModalCOM = (prop) => {
 
         </Modal>
         <Modal title="【109學年資訊應用菁英班小專題成果展】" visible={isCOMModal3} onOk={() => handleOkCOM(2)} onCancel={()=>handleCancelCOM(2)}>
-               
                 <Divider><h2>介紹</h2></Divider> 
                     <p>
                     本專案定位為學校的社團管理平台與小型交流社群，促成不同社群之間相互切磋與學習，精進每個幹部的社團管理與活動創新，並達到文本資料電子化；同時讓還在摸索興趣的學生們透過此平台，能快速理解與找尋到符合自己價值觀與興趣的社群，找到自身的價值與定位。
